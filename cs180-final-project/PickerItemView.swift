@@ -11,6 +11,7 @@ import SceneKit
 struct PickerItem {
     var file: String
     var name: String
+    var customShader: String?
 }
 
 class PickerItemView: UIView {
@@ -18,9 +19,13 @@ class PickerItemView: UIView {
     // MARK: - Variables
     
     static var availableModels = [
-        PickerItem(file: "spot", name: "Cow"),
-        PickerItem(file: "bob", name: "Duck"),
-        PickerItem(file: "blub", name: "Fish")
+        PickerItem(file: "spot", name: "Cow (ScneKit Phong)", customShader: nil),
+        PickerItem(file: "bob", name: "Duck (ScneKit Phong)", customShader: nil),
+        PickerItem(file: "blub", name: "Fish (ScneKit Phong)", customShader: nil),
+        PickerItem(file: "spot", name: "Cow (Textured Phong)", customShader: "textured"),
+        PickerItem(file: "bob", name: "Duck (Textured Phong)", customShader: "textured"),
+        PickerItem(file: "spot", name: "Cow (Raw Phong)", customShader: "phong"),
+        PickerItem(file: "bob", name: "Duck (Raw Phong)", customShader: "phong"),
     ]
     
     var titleLabel: UILabel!
@@ -53,8 +58,7 @@ class PickerItemView: UIView {
         addSubview(sceneView)
         
         // Load model
-        guard let scene = SCNScene(named: "art.scnassets/\(item.file).scn") else { print("couldn't find file"); return }
-        guard let node = scene.rootNode.childNode(withName: item.file, recursively: true) else { print("couldn't find node"); return }
+        guard let node = SCNNode.loadFromScene(sceneFile: item.file, customShader: item.customShader) else { return }
         sceneView.scene?.rootNode.addChildNode(node)
         
         // Start rotation animation

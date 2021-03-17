@@ -83,7 +83,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Add coach view
         coachView = ARCoachingOverlayView(frame: view.bounds)
         coachView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        coachView.session = sceneView.session
+        // coachView.session = sceneView.session
         coachView.delegate = self
         view.addSubview(coachView)
         
@@ -232,17 +232,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             // Get hit test location
             let resultLocation = SCNVector3(result.worldTransform.columns.3.x, result.worldTransform.columns.3.y, result.worldTransform.columns.3.z)
             
-            // Load spot
-            guard let spotScene = SCNScene(named: "art.scnassets/\(item.file).scn") else {
-                print("couldn't load spot scene")
-                continue
-            }
-            guard let spotNode = spotScene.rootNode.childNode(withName: item.file, recursively: true) else { continue }
+            // Load model
+            guard let node = SCNNode.loadFromScene(sceneFile: item.file, customShader: item.customShader) else { continue }
             
             // Add to scene
-            spotNode.worldPosition = SCNVector3(spotNode.worldPosition.x + resultLocation.x, spotNode.worldPosition.y + resultLocation.y, spotNode.worldPosition.z + resultLocation.z)
-            spotNode.pivot = SCNMatrix4MakeTranslation(0, -0.5, 0) // center on bottom of object
-            sceneView.scene.rootNode.addChildNode(spotNode)
+            node.worldPosition = SCNVector3(node.worldPosition.x + resultLocation.x, node.worldPosition.y + resultLocation.y, node.worldPosition.z + resultLocation.z)
+            node.pivot = SCNMatrix4MakeTranslation(0, -0.5, 0) // center on bottom of object
+            sceneView.scene.rootNode.addChildNode(node)
             
             // Hide label
             UIView.animate(withDuration: 0.2) {
