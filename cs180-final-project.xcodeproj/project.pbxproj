@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010F894D26004A0A00364211 /* PickerItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010F894C26004A0A00364211 /* PickerItemView.swift */; };
 		0175DBD9260021A400848085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0175DBD8260021A400848085 /* AppDelegate.swift */; };
 		0175DBDB260021A400848085 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 0175DBDA260021A400848085 /* art.scnassets */; };
 		0175DBDD260021A400848085 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0175DBDC260021A400848085 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010F894C26004A0A00364211 /* PickerItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerItemView.swift; sourceTree = "<group>"; };
 		0175DBD5260021A400848085 /* cs180-final-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cs180-final-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0175DBD8260021A400848085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0175DBDA260021A400848085 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				0175DBD8260021A400848085 /* AppDelegate.swift */,
 				0175DBDA260021A400848085 /* art.scnassets */,
 				0175DBDC260021A400848085 /* ViewController.swift */,
+				010F894C26004A0A00364211 /* PickerItemView.swift */,
 				0175DBDE260021A400848085 /* Main.storyboard */,
 				0175DBE1260021A500848085 /* Assets.xcassets */,
 				0175DBE3260021A500848085 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0175DBDD260021A400848085 /* ViewController.swift in Sources */,
+				010F894D26004A0A00364211 /* PickerItemView.swift in Sources */,
 				0175DBD9260021A400848085 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
