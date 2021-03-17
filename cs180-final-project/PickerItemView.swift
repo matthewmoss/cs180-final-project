@@ -19,9 +19,9 @@ class PickerItemView: UIView {
     // MARK: - Variables
     
     static var availableModels = [
-        PickerItem(file: "spot", name: "Cow (ScneKit Phong)", customShader: nil),
-        PickerItem(file: "bob", name: "Duck (ScneKit Phong)", customShader: nil),
-        PickerItem(file: "blub", name: "Fish (ScneKit Phong)", customShader: nil),
+        PickerItem(file: "spot", name: "Cow (SceneKit Phong)", customShader: nil),
+        PickerItem(file: "bob", name: "Duck (SceneKit Phong)", customShader: nil),
+        PickerItem(file: "blub", name: "Fish (SceneKit Phong)", customShader: nil),
         PickerItem(file: "spot", name: "Cow (Textured Phong)", customShader: "textured"),
         PickerItem(file: "bob", name: "Duck (Textured Phong)", customShader: "textured"),
         PickerItem(file: "spot", name: "Cow (Raw Phong)", customShader: "phong"),

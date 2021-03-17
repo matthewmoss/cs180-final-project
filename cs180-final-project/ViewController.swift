@@ -83,7 +83,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Add coach view
         coachView = ARCoachingOverlayView(frame: view.bounds)
         coachView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        // coachView.session = sceneView.session
+        coachView.session = sceneView.session
         coachView.delegate = self
         view.addSubview(coachView)
         
